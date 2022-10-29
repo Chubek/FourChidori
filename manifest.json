@@ -1,0 +1,36 @@
+{
+
+  "manifest_version": 2,
+  "name": "FourChidori",
+  "version": "1.0",
+
+  "description": "Intercepts submit button in 4chan/4channel and makes sure you are posing on the right board",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "chubakbidpaa@gmail.com"
+    }
+  },
+
+  "permissions": [
+    "notifications"
+  ],
+
+  "icons": {
+    "48": "cat.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://boards.4chan.org/*", "*://boards.4channel.org/*"],
+      "js": ["./FourChidori.js"]
+    }
+  ],
+
+  "background": {
+    "persistent": true,
+    "scripts": ["./Listener.js"]
+  }
+
+}
+
